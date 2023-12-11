@@ -1,4 +1,3 @@
-# Software-Deployment-Exercise
 # Task
 In this exercise, a containerized DevOps pipeline is to be created which provides a Node.js application in AKS. The easiest way to do this is to build on the example created in Lab2 and the DevOps project
 
