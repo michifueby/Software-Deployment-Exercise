@@ -1,0 +1,6 @@
+﻿openapi: '3.0.2'
+info:
+  title: Smart Home
+  version: '1.0'
+
+  
