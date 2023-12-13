@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Smart Home Menu</title>
+</head>
+<body>
+    <div class="banner">
+        <img src="icons/home.svg" class="banner-image">
+        <img src="icons/home.svg" class="banner-image">
+        <img src="icons/home.svg" class="banner-image">
+        <p>Smart Home App</p>
+        <img src="icons/home.svg" class="banner-image">
+        <img src="icons/home.svg" class="banner-image">
+        <img src="icons/home.svg" class="banner-image">
+    </div>
+    <div class="body">
+        <div class="center">
+            <button id="security-button" onclick="getSecurityStatus()">
+                <img src="icons/lock.svg">
+                <p>Security</p>
+            </button>
+            <button id="temperature-button" onclick="getTemperature()">
+                <img src="icons/thermostat.svg">
+                <p>Temperature</p>
+            </button>
+            <button id="document-button" onclick="getDoc()">
+                <img src="icons/document.svg">
+                <p>Documentation</p>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
