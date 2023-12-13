@@ -1,0 +1,27 @@
+apiVersion : apps/v1
+# This section specifies the type of Kubernetes object
+# This is a deployment that is responsible for providing and updating replica sets
+kind: Deployment
+# Sets the meta data
+metadata:
+  name: SD-Exercise
+# This specifies that a replica (pod) of the application should be deployed
+# This means that there will always be exactly one pod with this configuration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: SD-Exercise # The selector selects pods that have the label "app: SD-Exercise"
+  # The template for the pods to be created is set here
+  template:
+    metadata:
+      labels:
+        app: SD-Exercise
+    # A list of containers in each pod is defined here
+    spec:
+      containers:
+        - name: SD-Exercise
+          image: <azure-container-registry>
+          # The port on which the container listens is configured here
+          ports:
+          - containerPort: 3000
