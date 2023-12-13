@@ -1,6 +1,5 @@
-﻿openapi: '3.0.2'
+﻿openapi: 3.0.0
 info:
-  title: Smart Home
-  version: '1.0'
-
-  
+  title: Smart Home App
+  version: 1.0.0
+  description: An example Smart Home App using Swagger and Express

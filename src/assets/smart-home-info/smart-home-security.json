@@ -1,0 +1,24 @@
+{
+    "securityData": {
+      "alarm": {
+        "status": "offline"
+      },
+      "motionDetection": {
+        "status": "active"
+      },
+      "doorOpen": {
+        "status": "closed"
+      },
+      "windowOpen": {
+        "status": "open"
+      },
+      "smokeDetector": {
+        "status": "ok",
+        "batteryLevel": "90%"
+      },
+      "gasDetector": {
+        "status": "no danger detected"
+      }
+    }
+  }
+  

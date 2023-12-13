@@ -1,0 +1,81 @@
+html, body {
+    background-color: #313131;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.banner {
+    background-color: #227822;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 9vh;
+}
+
+.banner p {
+    font-size: 2.5vh;
+    color: #FFF;
+    font-family: monospace;
+    margin: 1vh 3vh 1vh 3vh;
+}
+
+.banner-image {
+    margin: 0vh 2vh 0vh 2vh;
+    scale: 1.5;
+    animation: rotation-animation 2s linear infinite;
+}
+
+@keyframes rotation-animation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-7vh);
+}
+
+button {
+    width: 60vh;
+    margin: 3%;
+    display: flex;
+    flex-direction: row;
+
+    border: none;
+    border-radius: 1vh;
+    background-color: #227822;
+    color: #FFF;
+    box-shadow: 5px 5px 20px #000000;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+button img {
+    margin-left: 0.5vh;
+}
+
+button p {
+    margin-left: 2vh;
+    font-size: 2vh;
+}

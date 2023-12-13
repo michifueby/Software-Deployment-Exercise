@@ -1,0 +1,13 @@
+{
+    "temperatureData": {
+      "indoor": {
+        "temperature": 22.5,
+        "humidity": 45
+      },
+      "outdoor": {
+        "temperature": 15.0,
+        "humidity": 60
+      }
+    }
+  }
+  
