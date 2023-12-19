@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: SD-Exercise
-          image: <azure-container-registry>
+          image: schlauhausregistry.azurecr.io
           # The port on which the container listens is configured here
           ports:
           - containerPort: 3000
