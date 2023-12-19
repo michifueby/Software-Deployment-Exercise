@@ -37,3 +37,13 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+        
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Azure for Students(1a920ef8-d9f9-4bd6-8879-5212d71a28c5)'
+        appType: 'webAppContainer'
+        WebAppName: 'SchlauHausInstrumententafel'
+        DockerNamespace: $(containerRegistry)
+        DockerRepository: $(imageRepository)
+        DockerImageTag: $(tag)
