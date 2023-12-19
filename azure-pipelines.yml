@@ -55,33 +55,33 @@ stages:
       runOnce:
         deploy:
           steps:
-          #- task: KubernetesManifest@0
-          #  displayName: Create imagePullSecret
-          #  inputs:
-          #    action: createSecret
-          #    secretName: $(imagePullSecret)
-          #    dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
-#
-          #- task: KubernetesManifest@0
-          #  displayName: Deploy to Kubernetes cluster
-          #  inputs:
-          #    action: deploy
-          #    manifests: |
-          #      $(Pipeline.Workspace)/manifests/deployment.yml
-          #      $(Pipeline.Workspace)/manifests/service.yml
-          #    imagePullSecrets: |
-          #      $(imagePullSecret)
-          #    containers: |
-          #      $(containerRegistry)/$(imageRepository):$(tag)
-          - task: KubernetesManifest@1
+          - task: KubernetesManifest@0
+            displayName: Create imagePullSecret
             inputs:
-              action: 'deploy'
-              connectionType: 'azureResourceManager'
-              azureSubscriptionConnection: 'Azure for Students(1a920ef8-d9f9-4bd6-8879-5212d71a28c5)'
-              azureResourceGroup: 'SchlauHaus'
-              kubernetesCluster: 'SchlauHausAKSCluster'
+              action: createSecret
+              secretName: $(imagePullSecret)
+              dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
+
+          - task: KubernetesManifest@0
+            displayName: Deploy to Kubernetes cluster
+            inputs:
+              action: deploy
               manifests: |
-               $(Pipeline.Workspace)/manifests/deployment.yml
-               $(Pipeline.Workspace)/manifests/service.yml
+                $(Pipeline.Workspace)/manifests/deployment.yml
+                $(Pipeline.Workspace)/manifests/service.yml
+              imagePullSecrets: |
+                $(imagePullSecret)
               containers: |
-               $(containerRegistry)/$(imageRepository):$(tag)
+                $(containerRegistry)/$(imageRepository):$(tag)
+        #  - task: KubernetesManifest@1
+        #    inputs:
+        #      action: 'deploy'
+        #      connectionType: 'azureResourceManager'
+        #      azureSubscriptionConnection: 'Azure for Students(1a920ef8-d9f9-4bd6-8879-5212d71a28c5)'
+        #      azureResourceGroup: 'SchlauHaus'
+        #      kubernetesCluster: 'SchlauHausAKSCluster'
+        #      manifests: |
+        #       $(Pipeline.Workspace)/manifests/deployment.yml
+        #       $(Pipeline.Workspace)/manifests/service.yml
+        #      containers: |
+        #       $(containerRegistry)/$(imageRepository):$(tag)
