@@ -50,5 +50,5 @@ stages:
         DockerNamespace: $(containerRegistry)
         DockerRepository: $(imageRepository)
         DockerImageTag: $(tag)
-        StartupCommand: 'node index.js'
+        #StartupCommand: 'node index.js'
         AppSettings: '-Port 3000'
