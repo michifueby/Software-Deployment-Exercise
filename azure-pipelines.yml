@@ -51,4 +51,4 @@ stages:
         DockerRepository: $(imageRepository)
         DockerImageTag: $(tag)
         StartupCommand: 'node index.js'
-        AppSettings: 'WEBSITE_PORT 3000'
+        AppSettings: 'WEBSITES_PORT 3000'
