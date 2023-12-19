@@ -25,6 +25,8 @@ variables:
   # Environment name
   environmentName: 'Software-Deployment-Exercise'
 
+  imagePullSecret: '<name>'
+
 stages:
 - stage: Build
   displayName: Build and push stage
