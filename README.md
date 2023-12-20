@@ -14,7 +14,7 @@ As soon as a new CheckIn is created in GIT, the pipeline should be triggered and
 
 Firstly, two YAML files were created in the manifests folder with the names **service.yml** and **deployment.yml** <br>
 
-In summary, the YAML file **service.yml** creates a Kubernetes service of the type "LoadBalancer" with the name "SD-Exercise", which listens on port 3000 and communicates with pods that have the label "app: SD-Exercise". The load balancer enables external access to the application by distributing the incoming traffic to the corresponding pods. <br>
+In summary, the YAML file **service.yml** creates a Kubernetes service of the type "LoadBalancer" with the name "sd-exercise", which listens on port 3000 and communicates with pods that have the label "app: sd-exercise". The load balancer enables external access to the application by distributing the incoming traffic to the corresponding pods. <br>
 
 In summary, the YAML file **deployment.yml** creates a Kubernetes deployment called "SD-Exercise", which creates a replica (pod) of the application. The pod is labeled "app: SD-Exercise" and contains a container that is created from the specified Docker image and listens on port 3000.
 
