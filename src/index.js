@@ -1,13 +1,16 @@
+const { Console } = require('console');
 const express = require('express');
 const app = express();
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
+const path = require('path');
 const swaggerDefinition = YAML.load('./swagger.yaml');
 const port = process.env.PORT || 3000;
 
 
 app.use(express.static('assets'));
+app.use('assets', express.static(path.join(__dirname, 'assets')));
 
 const options = {
     swaggerDefinition,
@@ -28,7 +31,7 @@ app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
  *         description: Successful response
  */
 app.get('/', (req, res) => {
-    res.sendFile(`${__dirname}\\assets\\index.html`);
+    res.sendFile(path.join(__dirname, 'assets', 'index.html'));
 });
 
 /**
@@ -41,7 +44,7 @@ app.get('/', (req, res) => {
  *         description: Successful response
  */
 app.get('/security', (req, res) => {
-    res.sendFile(`${__dirname}\\assets\\smart-home-info\\smart-home-security.json`)
+    res.sendFile(path.join(__dirname, 'assets', 'smart-home-info', 'smart-home-security.json'));
 });
 
 /**
@@ -54,7 +57,7 @@ app.get('/security', (req, res) => {
  *         description: Successful response
  */
 app.get('/temperature', (req, res) => {
-    res.sendFile(`${__dirname}\\assets\\smart-home-info\\smart-home-temperature.json`)
+    res.sendFile(path.join(__dirname, 'assets', 'smart-home-info', 'smart-home-temperature.json'));
 });
 
 app.listen(port, () => {
