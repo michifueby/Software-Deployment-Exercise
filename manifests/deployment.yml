@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: sd-exercise
-          image: schlauhausregistry.azurecr.io
+          image: schlauhausregistry.azurecr.io/schlauhausbild
           # The port on which the container listens is configured here
           ports:
           - containerPort: 3000
