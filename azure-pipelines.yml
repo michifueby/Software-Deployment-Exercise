@@ -23,9 +23,9 @@ variables:
   appName: 'SchlauHausInstrumententafel'
 
   # Environment name
-  environmentName: 'Software-Deployment-Exercise'
+  environmentName: 'SchlauHausUmbegung'
 
-  imagePullSecret: '<name>'
+  imagePullSecret: 'acr-secret'
 
 stages:
 - stage: Build
