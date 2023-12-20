@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 # Sets the meta data
 metadata:
-    name: SD-Exercise
+    name: sd-exercise
 # Here the type of service is set as “LoadBalancer”. 
 # This means that the Kubernetes cluster should automatically provision an external load balancer that distributes incoming traffic across the service's pods
 spec:
@@ -11,4 +11,4 @@ spec:
     ports:
     - port: 3000 
     selector:
-        app: SD-Exercise
+        app: sd-exercise
