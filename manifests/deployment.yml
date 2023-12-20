@@ -11,7 +11,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: SD-Exercise # The selector selects pods that have the label "app: SD-Exercise"
+      app: sd-exercise # The selector selects pods that have the label "app: SD-Exercise"
   # The template for the pods to be created is set here
   template:
     metadata:
