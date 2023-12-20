@@ -4,7 +4,7 @@ apiVersion : apps/v1
 kind: Deployment
 # Sets the meta data
 metadata:
-  name: SD-Exercise
+  name: sd-exercise
 # This specifies that a replica (pod) of the application should be deployed
 # This means that there will always be exactly one pod with this configuration
 spec:
@@ -16,11 +16,11 @@ spec:
   template:
     metadata:
       labels:
-        app: SD-Exercise
+        app: sd-exercise
     # A list of containers in each pod is defined here
     spec:
       containers:
-        - name: SD-Exercise
+        - name: sd-exercise
           image: schlauhausregistry.azurecr.io
           # The port on which the container listens is configured here
           ports:
