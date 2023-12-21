@@ -1,14 +1,34 @@
 # Task
-In this exercise, a containerized DevOps pipeline is to be created which provides a Node.js application in AKS. The easiest way to do this is to build on the example created in Lab2 and the DevOps project
 
-As soon as a new CheckIn is created in GIT, the pipeline should be triggered and perform the following actions.
+The point of this exercise is to create a containerized DevOps pipeline which provides a Node.js application in AKS. This project will build on the example created in Lab2 and the DevOps project.
+
+As soon as a new CheckIn is created in GIT, the pipeline should be triggered and perform the following actions:
 - Build a Docker image
 - Store the image in a registry
 - Deploy the new image in the AKS and make it available under a public IP
 
 ## Build a Docker image
 
+For the first step, a Dockerfile is created to automatically build a Node.js application using Node.js version 18 as its base image, and expose it to port 3000. 
+
+The file contains the following commands:
+
+```FROM node:18
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD [ "node", "index.js" ]```
+
+
 ## Store the image in a registry
+
+In order to store and manage our docker images, we need to store them in a registry. We store the image in the following url: schlauhausregistry.azurecr.io and name the repository schlauhausbild. This is done with the following commands:
+
+```docker tag schlauhausbild:$(Build.BuildId) schlauhausregistry.azurecr.io/schlauhausbild:$(Build.BuildId)
+
+docker push schlauhausregistry.azurecr.io/schlauhausbild:$(Build.BuildId)```
 
 ### Azure Pipeline
 
