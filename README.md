@@ -13,22 +13,24 @@ For the first step, a Dockerfile is created to automatically build a Node.js app
 
 The file contains the following commands:
 
-```FROM node:18
+```
+FROM node:18
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .
 EXPOSE 3000
-CMD [ "node", "index.js" ]```
+CMD [ "node", "index.js" ]
+```
 
 
 ## Store the image in a registry
 
 In order to store and manage our docker images, we need to store them in a registry. We store the image in the following url: schlauhausregistry.azurecr.io and name the repository schlauhausbild. This is done with the following commands:
 
-```docker tag schlauhausbild:$(Build.BuildId) schlauhausregistry.azurecr.io/schlauhausbild:$(Build.BuildId)
+```docker tag schlauhausbild:$(Build.BuildId) schlauhausregistry.azurecr.io/schlauhausbild:$(Build.BuildId)```
 
-docker push schlauhausregistry.azurecr.io/schlauhausbild:$(Build.BuildId)```
+```docker push schlauhausregistry.azurecr.io/schlauhausbild:$(Build.BuildId)```
 
 ### Azure Pipeline
 
